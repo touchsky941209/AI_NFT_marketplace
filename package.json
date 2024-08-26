@@ -1,0 +1,33 @@
+{
+  "name": "ainftm",
+  "version": "0.0.1",
+  "description": "AI image generated NFT marketpalce",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeepSoul71/AI-NFT-MarketPlace.git"
+  },
+  "keywords": [
+    "nft",
+    "ai"
+  ],
+  "author": "Hcrypto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DeepSoul71/AI-NFT-MarketPlace/issues"
+  },
+  "homepage": "https://github.com/DeepSoul71/AI-NFT-MarketPlace#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/contracts": "^5.0.1",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.20.1",
+    "hardhat-deploy": "^0.11.45"
+  },
+  "dependencies": {
+    "wagmi": "^2.5.7"
+  }
+}

@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 21, 17, 68;
+  --background-start-rgb: 23, 16, 66;
+  --background-middle-rgb: 73, 36, 129;
+  --background-end-rgb: 26, 43, 99;
+  --text-color: 59, 208, 216;
+  --border-color: 88, 243, 205;
+  --bg-board-color: 59,208,216,.2;
+  --bg-board-color-2: 59,208,216,0;
+  --primary-color: 111, 76, 255;
+  --board-color: 19, 26, 54;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 21, 17, 68;
+    --background-start-rgb: 73, 36, 131;
+    --background-end-rgb: 20, 16, 64;
+    --text-color: 59, 208, 216;
+    --border-color: 88, 243, 205;
+    --bg-board-color: 59,208,216,.2;
+    --bg-board-color-2: 59,208,216,0;
+    --primary-color: 111, 76, 255;
+  }
+}
+
+body {
+  color: white;
+  background: 
+    radial-gradient(
+    circle at right,
+      rgba(var(--background-end-rgb)) 10%,
+      rgba(var(--background-middle-rgb), 0.5)
+    ),
+    
+    linear-gradient(
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-middle-rgb)),
+      rgb(var(--background-end-rgb))
+    ),
+    radial-gradient(
+    circle at left bottom,
+      rgb(var(--background-end-rgb)) ,
+      rgb(var(--background-middle-rgb))
+    )
+    /* radial-gradient(circle at top left rgba(var(--background-start-rgb), 0.9) 60%, rgba(var(--background-end-rgb), 0.8)); */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  padding: 12px 32px;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transition: all 0.3s ease;
+  filter: brightness(90%);
+}
+
+.btn-primary {
+  background-color: rgb(var(--primary-color));
+  border: 1px solid rgb(var(--primary-color));
+  color: rgb(var(--text-color));
+}
+
+/* https://thegraph.com/en/ */
+.btn-semi-transparent {
+  background-color: rgba(var(--primary-color), 0.15);
+  border: 1px solid rgba(var(--primary-color), 0.25);
+  color: rgba(var(--text-color), 0.8);
+}
+
+.btn-semi-transparent:hover {
+  background-color: rgba(var(--primary-color), 0.35);
+  border: 1px solid rgba(var(--primary-color), 0.5);
+  color: rgba(var(--text-color), 0.9);
+}
+
+.btn-glow:hover {
+  box-shadow: rgba(var(--primary-color), 0.5) 0px 0px 20px 0px;
+}
+
+/* https://sushi.com/ */
+.btn-gradient {
+  background-image: linear-gradient(to right, rgb(1 134 218), rgb(182 49 167));
+  border: 0;
+  color: rgba(var(--text-color));
+}
+
+/* https://sushi.com/ */
+.btn-gradient-border {
+  color: rgba(var(--text-color));
+  border: 4px double transparent;
+  background-image: linear-gradient(162deg, rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.blue-effect {
+  --text-color: rgb(59, 208, 216);
+  --border-color: rgb(88, 243, 205);
+  --bg-board-color: rgba(59,208,216,.2);
+  --bg-board-color-2: rgba(59,208,216,0);
+  --primary-color: rgb(111, 76, 255);
+}
+
+.white-effect {
+  --text-color: rgb(255, 255, 255);
+  --border-color: rgb(255, 255, 255);
+  --bg-board-color: rgba(255, 255, 255,.12);
+  --bg-board-color-2: rgba(255, 255, 255,0);
+  --primary-color: rgb(111, 76, 255);
+}
+
+.glass-effect {
+  color: var(--text-color);
+  border: 4px double transparent;
+  background-image: linear-gradient(162deg,var(--bg-board-color) 28.7%, var(--bg-board-color-2,var(--bg-board-color)));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  position: relative;
+  isolation: isolate;
+}
+
+.glass-effect::before {
+  content: "";
+  box-shadow: inset 0 0 0 var(--border-line-width,1.5px) var(--border-color);
+  border-radius: inherit;
+  inset: 0;
+  position: absolute;
+  mask-image: radial-gradient(at -31% -58%,rgba(0,0,0,.5) 34%,transparent 60%),linear-gradient(270deg,rgba(0,0,0,.2) 0,transparent 13%),linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.05));
+}
+
+.link.active{
+  color:dodgerblue;
+}
+
+.top-navbar{
+  background-color: rgb(var(--board-color));
+}
+
+.side-navbar{
+  background-color: rgb(var(--board-color));
+}
+
+.main-board{
+  background: radial-gradient(circle at center, );
+}
